@@ -4,38 +4,20 @@
 <head>
   <meta charset="utf-8">
   <title>이호성의 웹페이지 - HTML</title>
-  <style>
-  a{
-    text-decoration: none;
-  }
-  h1{
-    font-size: 60px;
-    text-align: center;
-  }
-  h2{
-    font-size: 30px;
-  }
-  </style>
+  <link  rel="stylesheet" href="style.css">
 </head>
 <body>
-  <p style="margin-top:50px;">
-  <h1><a href ="index.html">생활코딩</a></h1>
-  </p>
-  <p style="margin-top:50px;">
+  <h1><a href ="index.html"style="color:black;">생활코딩</a></h1>
+  <div id="grid">
   <ol><h2>
     <li><a href="1.html" target="_blank" style="color:red; text-decoration:underline;;">HTML</a></li>
-    <li><a href="2.html" target="_blank">CSS</a></li>
-    <li><a href="3.html" target="_blank">JavaScript</a></li></h2>
-  </ol></p>
+    <li><a href="2.html" target="_blank" style="color:black;">CSS</a></li>
+    <li><a href="3.html" target="_blank" style="color:black;">JavaScript</a></li></h2>
+  </ol>
+  <div>
   <h2><a href="https://opentutorials.org/course/3084" target="blank" title="생활코딩 web1-html 커버페이지">● web1-HTML 요약</a></h2>
-  <p style="margin-top:30px;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/jSJM9iOiQ1g" frameborder="0" allowfullscreen></iframe>
-  </p>
-  <p>
   <h3>＃웹페이지의 한글이 깨진다면</h3>
     <xmp>  :  <meta charset="utf-8">  </xmp>태그를 추가하면 된다.
-  </p>
-
   <p>
   <h3>＃코드를 그대로 출력하고 싶다면</h3>
     <xmp>  :  <xmp>  </xmp>태그를 출력하고싶은 코드 사이에 넣는다.
@@ -62,7 +44,7 @@
   <h3>＃부모태그와 자식태그</h3>
     <xmp>  :  </xmp><strong>-목차</strong>를 생성하는 태그가 있다. 바로 <xmp><li> </li> 태그이다.</xmp>
     <br><xmp>     </xmp>이 <xmp> <li> </xmp> 태그는 항상 부모태그를 갖는다.
-    <br><xmp>     </xmp><xmp> <ui> </xmp>(unordered list)라는 부모태그는 목차를 구분해주고, <xmp> <oi> </xmp>(ordered list)라는 부모태그는 목차 안에 번호를 매겨준다.
+    <br><xmp>     </xmp><xmp> <ul> </xmp>(unordered list)라는 부모태그는 목차를 구분해주고, <xmp> <ol> </xmp>(ordered list)라는 부모태그는 목차 안에 번호를 매겨준다.
     <br>
     <br><xmp>     </xmp><strong>-표</strong>는 <xmp><table> , <tr> , <td></xmp> 이렇게 세개의 태그가 항상 부모 자식 태그로 같이 다닌다.
   </p>
@@ -71,7 +53,7 @@
   <h3>＃문서의 구조 태그(=element)</h3>
    <xmp>  :  </xmp><xmp><title></xmp>태그는 웹페이지 상단의 제목을 할당한다.
    <br><xmp>     </xmp>그리고 <xmp><meta> == 파일 여는 방식(언어 맞추기)</xmp> 태그와 <xmp><title></xmp> 태그는
-   <br><xmp>     </xmp>문서의 <xmp><head></xmp> 태그에 포함된다.
+   <br><xmp>     </xmp>문서의 <xmp><head></xmp> 태그에 포함된다.(CSS style도 여기 포함)
    <br><xmp>     </xmp>문서의 나머지 본문은 <xmp><body></xmp> 태그에 포함된다.
    <br><xmp>     </xmp>그리고 head와 body 태그는 <xmp><html></xmp> 이라는 태그에 묶일 수 있다.
    <br><xmp>     </xmp>그리고 이 웹페이지가 HTML로서 만들어졌다는 것을 표현하기 위해 문서의 시작에 <xmp><!doctype html></xmp> 코드를 추가한다.
@@ -89,11 +71,13 @@
    <p style="margin-top:100px;">
    <h3>＃(부록 1)동영상 삽입</h3>
     <xmp>     </xmp><xmp><iframe width="" height="" src="" frameborder="" allowfullscreen></xmp>태그를 사용하면 된다.
+    <br><iframe width="560" height="315" src="https://www.youtube.com/embed/jSJM9iOiQ1g" frameborder="0" allowfullscreen></iframe>
     <xmp>     </xmp><br>width와 height로 크기를 조절하고 src로 주소를 넣는다. frameborder는 테두리에 관한것 같은데 잘 모르겠고 allowfullscreen은 전체화면 허용을 한다.
    <h3>＃(부록 2)댓글, 채팅기능 추가</h3>
    <a href="https://opentutorials.org/course/3084/18594" target="_blank">댓글</a> / <a href="https://opentutorials.org/course/3084/18597" target="_blank">링크</a> 둘 다 웹서버를 통해 열어야만 실행 가능하다. 그냥 자기 파일로 열면 실행 안됨. 둘 다 너무 어려워서 코드 갖다쓰기로
    </p>
    <p style="margin-top:100px;">
-   <h1><strong> ★WEB1 -HTML & Internet 수업을 부록까지 전부 다 듣고 정리했습니다. 수고하셨습니다!!★</h1></strong></p>
+   <strong> ★WEB1 -HTML & Internet 수업을 부록까지 전부 다 듣고 정리했습니다. 수고하셨습니다!!★</strong></p>
+ </div>
 </body>
 </html>

@@ -1,116 +1,113 @@
-
 <!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
   <title>이호성의 웹페이지 - CSS</title>
-  <style>
-    a{
-      text-decoration:none;
-    }
-    #activing{
-      color:red;
-    }
-    .saw{
-      color:gray;
-    }
-    h1{
-      font-size: 60px;
-      text-align: center;
-      border-bottom: skyblue solid 3px;
-      padding:20px;
-      margin:0;
-
-    }
-    h2{
-      font-size: 30px;
-    }
-    ol{
-      border-right: 3px skyblue solid;
-      width: 150px;
-      margin:0;
-    }
-  </style>
+  <link  rel="stylesheet" href="style.css">
 </head>
 <body>
-  <p style="margin-top:50px;">
-  <h1><a href ="index.html">생활코딩</a></h1>
-  </p>
-  <p style="margin-top:50px;">
-  <ol><h2>
-    <li><a href="1.html" target="_blank" class="saw">HTML</a></li>
-    <li><a href="2.html" target="_blank" class="saw" id="activing" style="text-decoration:underline;">CSS</a></li>
-    <li><a href="3.html" target="_blank" >JavaScript</a></li></h2>
-  </ol></p>
-  <h2><a href="https://opentutorials.org/course/3086" target="blank" title="생활코딩 web2-css 커버페이지">● web2-CSS 요약</a></h2>
+  <h1><a href ="index.html" style="color : black;">생활코딩</a></h1>
+  <div id="grid">
+    <ol><h2>
+      <li><a href="1.html" target="_blank" style="color:black;">HTML</a></li>
+      <li><a href="2.html" target="_blank" style="color: red; text-decoration:underline;">CSS</a></li>
+      <li><a href="3.html" target="_blank" style="color:black;">JavaScript</a></li></h2>
+    </ol>
+    <div>
+      <br>
+    <h2><a href="https://opentutorials.org/course/3086" target="blank" title="생활코딩 web2-css 커버페이지">● web2-CSS 요약</a></h2>
 
-  <h3>＃CSS 등장 이전의 상황</h3>
-  사람들은 디자인을 원했다. 초기 웹개발자들은 html에 태그를 추가해 디자인을 바꾸고자 하였다. 그래서 font라는 태그가 있었다. 그것은 지금 사용되지 않는다. 왜냐면 정보적으로 중요한 태그가 아닐 뿐더러, 일일히 수정하는데 번거로움이 컸기 때문이다.
-  <br>그렇게 웹 개발자들은 어려운 길이지만 본질적인 해결책인 css를 만들기 시작했다.
-  <h3>＃ CSS의 등장</h3>
-  컴퓨터에게 html의 문법으로 CSS를 사용하겠다고 알려줘야한다. --> head 태그 안에 style 태그를 넣는다.
-  <h3>＃ 링크의 모든 폰트 색깔을 바꾸고 싶을 때</h3>
-  <xmp>
-  <head>
-  <style>
-    a {
-      color:green;
-    }
-  </style>
-  </head>
-  }</xmp> head태그 안에 style태그, style태그 안에 a태그를 넣고 {중괄호}안에 color:원하는색; 세미콜론;으로 마무리한다.
-
-  <h3><a href="https://opentutorials.org/course/3086/18318" target="_blank">＃CSS 속성의 기본</a></h3>
-  <h3>-현재 들어와 있는 링크를 다른 색으로 표시하고 싶을 때</h3>
-  위에 배운거로는 나타낼 수 없다.
-  <br>접속되어있는 링크를 포함한 a태그에 직접 CSS 코드를 넣는다.
-  <br><xmp> <a href="2.html" target="_blank" style="color:red;">CSS</a></xmp> 이렇게 하면 되는데,
-  <br>style을 작성해주어 CSS 코드임을 알리는게 중요한 약속이다. 여기서 style=""은 HTML의 속성이다. 따옴표 안은 CSS의 효과가 들어온다.
-  <br><u>a{}의 a는 웹페이지의 모든 a태그를 선택한다고 해서 선택자(selector). 그 안은 선언(Declaration), color는 Property, red는 Value</u>
-  <h3>-링크들에 붙어있는 밑줄을 없애고 싶을 때</h3>
-  선택자 안에 text-decoration:none; 선언을 추가한다.
-  <h3>-현재 들어와 있는 링크만 밑줄을 넣고 싶을 때</h3>
-  위와 같은 방법으로 style="" 속성안에 text-decoration:underline; 내용을 추가한다.
-  <br><u>여기서 중요한 점은, 선언할 때 속성에 추가할 때 모두 ; 세미콜론으로 구분을 해주어야 한다는 것.</u>
-  <h3>＃CSS 속성을 스스로 알아내는 법 (텍스트 크기와 정렬 바꾸는 법) </h3>
-  검색어 추천 : CSS font size Property ~~ // CSS text-align Property 등등~
-  <h3><a href="https://opentutorials.org/course/3086/18329" target="_blank">＃CSS 선택자(방문했던 링크 색을 바꾸는 법)</a></h3>
-  1. 태그 선택자 : 가장 포괄적이다 == 가장 힘이 약하다
-  <br>2. 클래스 선택자 : class="이름1"로 지정을 하고 head에서 .이름1 으로 불러낸다.
-  <br>3. 아이디 선택자 : 가장 구체적이다 == 가장 힘이 세다. id="이름2"로 지정을 하고 head에서 #이름2 으로 불러낸다.
-  <h3>＃CSS 박스모델</h3>
-  <xmp><head>
+    <h3>＃CSS 등장 이전의 상황</h3>
+    사람들은 디자인을 원했다. 초기 웹개발자들은 html에 태그를 추가해 디자인을 바꾸고자 하였다. 그래서 font라는 태그가 있었다. 그것은 지금 사용되지 않는다. 왜냐면 정보적으로 중요한 태그가 아닐 뿐더러, 일일히 수정하는데 번거로움이 컸기 때문이다.
+    <br>그렇게 웹 개발자들은 어려운 길이지만 본질적인 해결책인 css를 만들기 시작했다.
+    <h3>＃ CSS의 등장</h3>
+    컴퓨터에게 html의 문법으로 CSS를 사용하겠다고 알려줘야한다. --> head 태그 안에 style 태그를 넣는다.
+    <h3>＃ 링크의 모든 폰트 색깔을 바꾸고 싶을 때</h3>
+    <xmp>
+    <head>
     <style>
-      /*
-      block level element
-      */
-      h1{
-        border-width:5px;
-        border-color:red;
-        border-style:solid;
-        display:inline;
-      }
-      /*
-      inline element
-      */
-      a{
-        border-width:5px;
-        border-color:red;
-        border-style:solid;
-        display: block;
+      a {
+        color:green;
       }
     </style>
-  </head></xmp><br>보다시피 h1 태그는 화면 전체를 쓰고(==block level element), a 태그는 그 텍스트만큼의 크기만 쓴다.(==inline element)
-  <br>display:inline 또는 display:block 코드를 추가하면 사용 크기를 바꿀 수 있다.
-  <br> 중복을 제거하면,<xmp>  <head>
+    </head>
+    }</xmp> head태그 안에 style태그, style태그 안에 a태그를 넣고 {중괄호}안에 color:원하는색; 세미콜론;으로 마무리한다.
+
+    <h3><a href="https://opentutorials.org/course/3086/18318" target="_blank">＃CSS 속성의 기본</a></h3>
+    <h3>-현재 들어와 있는 링크를 다른 색으로 표시하고 싶을 때</h3>
+    위에 배운거로는 나타낼 수 없다.
+    <br>접속되어있는 링크를 포함한 a태그에 직접 CSS 코드를 넣는다.
+    <br><xmp> <a href="2.html" target="_blank" style="color:red;">CSS</a></xmp> 이렇게 하면 되는데,
+    <br>style을 작성해주어 CSS 코드임을 알리는게 중요한 약속이다. 여기서 style=""은 HTML의 속성이다. 따옴표 안은 CSS의 효과가 들어온다.
+    <br><u>a{}의 a는 웹페이지의 모든 a태그를 선택한다고 해서 선택자(selector). 그 안은 선언(Declaration), color는 Property, red는 Value</u>
+    <h3>-링크들에 붙어있는 밑줄을 없애고 싶을 때</h3>
+    선택자 안에 text-decoration:none; 선언을 추가한다.
+    <h3>-현재 들어와 있는 링크만 밑줄을 넣고 싶을 때</h3>
+    위와 같은 방법으로 style="" 속성안에 text-decoration:underline; 내용을 추가한다.
+    <br><u>여기서 중요한 점은, 선언할 때 속성에 추가할 때 모두 ; 세미콜론으로 구분을 해주어야 한다는 것.</u>
+    <h3>＃CSS 속성을 스스로 알아내는 법 (텍스트 크기와 정렬 바꾸는 법) </h3>
+    검색어 추천 : CSS font size Property ~~ // CSS text-align Property 등등~
+    <h3><a href="https://opentutorials.org/course/3086/18329" target="_blank">＃CSS 선택자(방문했던 링크 색을 바꾸는 법)</a></h3>
+    1. 태그 선택자 : 가장 포괄적이다 == 가장 힘이 약하다
+    <br>2. 클래스 선택자 : class="이름1"로 지정을 하고 head에서 .이름1 으로 불러낸다.
+    <br>3. 아이디 선택자 : 가장 구체적이다 == 가장 힘이 세다. id="이름2"로 지정을 하고 head에서 #이름2 으로 불러낸다.
+    <h3>＃CSS 박스모델</h3>
+    <xmp><head>
       <style>
-        h1,a{
-          border:5px solid red;
+        /*
+        block level element
+        */
+        h1{
+          border-width:5px;
+          border-color:red;
+          border-style:solid;
+          display:inline;
+        }
+        /*
+        inline element
+        */
+        a{
+          border-width:5px;
+          border-color:red;
+          border-style:solid;
+          display: block;
         }
       </style>
-    </head></xmp> 이런 코드가 된다. 선택자에 콤마(,)를 활용하고 안에는 순서 관계없이 띄어쓰기로 구분 가능.<br>
-    <img src="boxmodel-image.png" width="400px" height="200px">
-    <br>이와 같이 박스 영역에 각각 이름이 있는데 padding:20px; 처럼 크기를 조절하는데 유용하다.
-    <br>또한 웹페이지에서 우클릭하면 검사(inspect)를 볼 수 있는데 현재 CSS boxmodel의 상세값을 알 수 있다.
+    </head></xmp><br>보다시피 h1 태그는 화면 전체를 쓰고(==block level element), a 태그는 그 텍스트만큼의 크기만 쓴다.(==inline element)
+    <br>display:inline 또는 display:block 코드를 추가하면 사용 크기를 바꿀 수 있다.
+    <br> 중복을 제거하면,<xmp>  <head>
+        <style>
+          h1,a{
+            border:5px solid red;
+          }
+        </style>
+      </head></xmp> 이런 코드가 된다. 선택자에 콤마(,)를 활용하고 안에는 순서 관계없이 띄어쓰기로 구분 가능.<br>
+      <img src="boxmodel-image.png" width="400px" height="200px">
+      <br>이와 같이 박스 영역에 각각 이름이 있는데 padding:20px; 처럼 크기를 조절하는데 유용하다.
+      <br>또한 웹페이지에서 우클릭하면 검사(inspect)를 볼 수 있는데 현재 CSS boxmodel의 상세값을 알 수 있다.
+      <h3>＃CSS 그리드</h3>
+      <xmp><div></xmp>태그는 어떠한 특성도 없는 태그이다. block level element이다. (<xmp><span></xmp>태그도 특성이 없는데, inline element이다.)
+      <br>1.그리드를 사용하고자 하는 내용에 부모 태그를 설정한다.<br><xmp>  <div>
+          <div>NAVIGATION</div>
+          <div>ARTICLE</div>
+        </div></xmp>
+      <br>2.부모 태그에 id선택자를 부여한다. <br><xmp><div id="grid"> #grid{}</div></xmp>
+      <br>3.선언에 <br><xmp>        display:grid;
+              grid-template-columns: 150px 1fr;</xmp> 코드를 작성한다.<br> 여기서 150px은 고정, 1fr 크기가 화면 비율에 따라 바뀐다.
+      <h3>＃반응형 디자인, 미디어 쿼리</h3>
+      웹페이지의 크기에 따라 보여지는 게 다르게 하기 위한 방법 == mediaquery
+      <br>웹페이지 우클릭해서 검사하면 페이지 크기의 픽셀값을 알 수 있다.
+      <br><xmp>@media(max-width:800px){
+                 div{
+                   display:none;
+                 }
+               }</xmp><br>@media 코드를 작성한다.
+               <br>max(화면 크기가 800px보다 작아지면 div내용 display가 none.)는 최댓값, min(800px보다 커지면 display가 none.)이 최솟값이다.
+      <h3>＃CSS 코드의 재사용</h3>
+      다른 웹페이지에 CSS코드 복붙하느라 힘드셨죠? 방법 알려드림
+      1. style태그 안에 있던 css 코드만 빼서 (style 태그 제외) 새로운 파일(style.css)을 만든다.
+      2. head 태그 안에 <xmp><link rel="stylesheet" href="style.css"></xmp>코드를 작성한다. 여기도 style 태그는 안 쓴다.
+      이제 1억개의 웹페이지가 있을 때 css 수정은 style.css 파일에서만 하면 된다.
+    </div></div>
 </body>
 </html>
