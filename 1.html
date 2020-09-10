@@ -5,9 +5,13 @@
   <meta charset="utf-8">
   <title>이호성의 웹페이지 - HTML</title>
   <link  rel="stylesheet" href="style.css">
+  <script src="colors.js"></script>
 </head>
 <body>
   <h1><a href ="index.html"style="color:black;">생활코딩</a></h1>
+  <input id="Night_Day" type="button" value="Night" onclick="
+    NightDayHandler(this);
+    ">
   <div id="grid">
   <ol><h2>
     <li><a href="1.html" target="_blank" style="color:red; text-decoration:underline;;">HTML</a></li>
@@ -25,12 +29,12 @@
 
   <p>
   <h3>＃줄바꿈</h3>
-    <xmp>  :  <br>  </xmp>태그는 라인 하나를 띄워 준다.
+    <xmp>  :  <br> 태그는 라인 하나를 띄워 준다.</xmp>
     <br>
-    <xmp>     <p>와</p>   </xmp>태그는 단락을 지정한다.
-    <br><br><xmp>   </xmp>※ br태그 보다 p 태그가 더좋다.
-    <br><xmp>     </xmp>p태그를 통해서 단락의 경계를 분명히 하면서 CSS를 통해 p태그의 디자인을 자유롭게 변경할 수 있기 때문이다.
-    <br><xmp>     </xmp>예시 : <xmp><p style="margin-top:30px;"></xmp> == 30px의 크기만큼 단락을 지정해달라.
+    <xmp>     <p>와</p> 태그는 단락을 지정한다.</xmp>
+    <xmp>   </xmp>※ br태그 보다 p 태그가 더좋다.
+    <xmp>  :   p태그를 통해서 단락의 경계를 분명히 하면서 CSS를 통해 p태그의 디자인을 자유롭게 변경할 수 있기 때문이다. </xmp>
+    <br><xmp>     예시 : <xmp><p style="margin-top:30px;"></xmp></xmp> == 30px의 크기만큼 단락을 지정해달라.
   </p>
 
   <p>
@@ -51,7 +55,7 @@
 
   <p>
   <h3>＃문서의 구조 태그(=element)</h3>
-   <xmp>  :  </xmp><xmp><title></xmp>태그는 웹페이지 상단의 제목을 할당한다.
+   <xmp>  :  <title></xmp> 이 태그는 웹페이지 상단의 제목을 할당한다.
    <br><xmp>     </xmp>그리고 <xmp><meta> == 파일 여는 방식(언어 맞추기)</xmp> 태그와 <xmp><title></xmp> 태그는
    <br><xmp>     </xmp>문서의 <xmp><head></xmp> 태그에 포함된다.(CSS style도 여기 포함)
    <br><xmp>     </xmp>문서의 나머지 본문은 <xmp><body></xmp> 태그에 포함된다.
@@ -77,7 +81,7 @@
    <a href="https://opentutorials.org/course/3084/18594" target="_blank">댓글</a> / <a href="https://opentutorials.org/course/3084/18597" target="_blank">링크</a> 둘 다 웹서버를 통해 열어야만 실행 가능하다. 그냥 자기 파일로 열면 실행 안됨. 둘 다 너무 어려워서 코드 갖다쓰기로
    </p>
    <p style="margin-top:100px;">
-   <strong> ★WEB1 -HTML & Internet 수업을 부록까지 전부 다 듣고 정리했습니다. 수고하셨습니다!!★</strong></p>
+   <strong> ★WEB1 - HTML & Internet 수업을 부록까지 전부 다 듣고 정리했습니다. 수고하셨습니다!!★</strong></p>
  </div>
 </body>
 </html>
