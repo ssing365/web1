@@ -4,17 +4,185 @@
   <meta charset="utf-8">
   <title>이호성의 웹페이지 - JavaScript</title>
   <link  rel="stylesheet" href="style.css">
+  <script src="colors.js"></script>
 </head>
 <body>
-  <h1><a href ="index.html" style="color:black;">생활코딩</a></h1>
+  <h1><a href ="index.html" style="color:green;">생활코딩</a></h1>
+  <input id="Night_Day" type="button" value="Night" onclick="
+    NightDayHandler(this);
+    ">
  <div id="grid">
   <ol><h2>
-    <li><a href="1.html" target="_blank" style="color:black;">HTML</a></li>
-    <li><a href="2.html" target="_blank" style="color:black;">CSS</a></li>
+    <li><a href="1.html" target="_blank" style="color:green;">HTML</a></li>
+    <li><a href="2.html" target="_blank" style="color:green;">CSS</a></li>
     <li><a href="3.html" target="_blank" style="color:red; text-decoration:underline;">JavaScript</a></li></h2>
   </ol>
   <div>
   <h2><a href="https://opentutorials.org/course/3085" target="blank" title="생활코딩 web2-Javascript 커버페이지">● web2-JavaScript 요약</a></h1>
+    <br><a href="https://yah.ac/web2javascript" target="_blank" style="text-decoration:underline;"><strong>진도표</strong></a>
+  <h3>＃Script 태그</h3>
+    <xmp><script>
+          document.write(1+1)
+    </script></xmp>
+    script => JavaScript의 코드라는걸 HTML에게 알려주는 태그
+    <br>document.write안에 1+1은 계산돼서 2로 출력된다. (기본 HTML은 계산되지 않고 1+1로 출력이 된다.)
+  <h3>＃이벤트</h3>
+    <xmp>    <input type="button" value="시작하기" onclick="alert('립')">
+    <input type="text" onkeydown="alert('key down!')">
+    <input type="text" onchange="alert('changed!')"></xmp>
+    input 태그로 버튼이나 입력창을 만들 수 있다.
+    <br>value 태그로 이름을 삽입한다.
+    <br>on~ 속성은 경고창이 뜨는 코드. 웹페이지에서 동작하는 유용한 기능들이다. 이들을 event 라고 부른다.
+  <h3>＃콘솔</h3>
+     자바스크립트는 웹페이지를 만드는 용도 뿐만 아니라 웹페이지의 콘솔에서 간단한 기능을 실행시킬 수 도 있다
+     <br>콘솔에서 실행을 유보하고 엔터키를 누르고 싶을 때는 'shift-enter'키
+  <h3>＃데이터타입 - 문자열과 숫자</h3>
+     데이터 타입에는 문자열과 숫자가 있고 각각 효과가 있다. ("1"은 문자열이다.)
+     <br> 검색어 추천 -JavaScript string
+  <h3>＃변수와 대입연산자</h3>
+     x = black;
+     <br>x는 변수, =는 대입연산자.
+     <br>변수 앞에 var을 쓰는 습관을 들일 것.
+  <h3>＃제어할 태그 선택하기</h3>
+     onclick="" 안에 JavaScript의 코드를 작성한다.
+     <br> 검색어 : JavaScript select tag by css selector
+     <br> 검색어 : JavaScript element style
+  <h3>＃조건문 예고</h3>
+      토글 : ex) day 버튼을 누르면 night 으로 변하고 night을 누르면 day로 변하는 기능.
+  <h3>＃비교 연산자, Boolean, 데이터타입</h3>
+      비교 연산자 : === (좌항과 우항이 같은지) &lt; (<) &gt;(>)
+      Boolean : 비교 연산자를 통해 만들어지는 결과는 True 나 False. 이 둘을 묶어 Boolean 이라고 부른다.
+  <h3>＃조건문 문법</h3>
+   <xmp><script>
+    document.write("1<br>");
+    if(true <== 여기가 Boolean 값 즉, True or False){
+      document.write("2<br>");
+    } else (false일때 실행되는 코드) {
+      document.write("3<br>");
+    }
+    document.write("4<br>");
+    </script></xmp>
+    이 코드로 실행하면 1 2 4 가 실행된다.
+  <h3>＃조건문 활용</h3>
+   input button에 id 를 부여하고 id value가 맞고 틀린지에 조건문을 활용하여 Day,Night 모드 토글을 만들 수 있다.
+   <br>if(document.querySelector('#night_day').value == 'Night'){ 배경 검정, value Day로 바꾸기 등}
+   <br>else{ 배경 흰색, value Night으로 바꾸기 등}
+  <h3>＃리팩토링(refactoring)</h3>
+   <strong>코딩을 잘 하는 방법 : 중복을 끝까지 쫓아 없애라.</strong>
+   <br>리팩토링 : 실행되는 결과는 같지만 코드를 효율적으로 줄이는 것
+   <br>document.querySelector('#night_day') 부분을 this 라는 키워드로 치환했다.
+   버튼을 여러개 만들고 싶을 때 이름 구분을 일일이 하지 않아도 돼서 유용하게 사용한다.
+   <br>document.querySelector('body') 도 변수 target으로 치환하여 작성하면 중복을 줄일 수 있다.
+  <h3>＃반복문 예고</h3>
+   버튼을 누를 때 마다 모든 링크의 폰트 색이 바뀌도록 할 수 있다.
+  <h3>＃배열</h3>
+   검색어 추천 : JavaScript Array ~~
+   <br>대괄호 안에 인덱스들을 입력 및 추가하고 원소의 개수나 몇번째 원소인지를 출력할 수 있다.
+   <br>반복문을 배워야 활용법을 알 수 있다.
+  <h3>＃반복문</h3>
+   리스트 2와 3 코드를 세번 반복 실행하고 싶을 때 사용하는 while문
+  <xmp><ul>
+  <script>
+    document.write('<li>1</li>');
+    var i = 1;
+    while(i<=3){
+      document.write('<li>2</li>');
+      document.write('<li>3</li>');
+      i = i + 1;
+    }
+    document.write('<li>4</li>');
+    </script>
+    </ul></xmp>
+  <h3>＃배열과 반복문</h3>
+  <xmp>
+  <script>
+    var coworkers = ['egoing','leezche','duru','taeho','graphittie']
+  </script>
+  <h2>Co workers</h2>
+  <ul>
+    <script>
+      var i = 0;
+      while (i < coworkers.length /*배열의 원소 개수만큼 반복이라는 뜻, 따라서 편하게 리스트에 원소를 추가할 수 있다.*/ ){
+        document.write('<li><a href="blabla'+coworkers[i]/*각 원소에 링크 할당 가능*/+'">'+coworkers[i]/*원소 차레로 출력*/+'</a></li>');
+        i = i + 1;
+      }
+    </script>
+  </ul></xmp>
+  <h3><a href="https://opentutorials.org/course/3085/18850" target="_blank" >＃배열과 반복문의 활용</a></h3>
+    검색어 추천 : JavaScript get element by css selector multiple -> JavaScript querySelectorall
+    <xmp>
+    var alist = document.querySelectorAll('a');
+    var i = 0;
+    while(i < alist.length){
+      cosole.log(alist[i]);
+      alist[i].style.color = 'powderblue';
+      i = i + 1;
+    }</xmp>
+  <h3>＃함수예고</h3>
+    함수의 활용 : input이 많을 때 (예를들어 버튼이 1억개가 있다고 가정할때) 중복을 없애고 효율적으로 만들어 준다.
+     = input 코드를 함수에 넣고 함수만 불러내면 됨
+  <h3>＃함수</h3>
+    (1)함수 기본 문법 : <xmp> function 함수이름(){
+                        실행할코드;
+                                    }</xmp>
+    그리고 함수이름(); 을 입력하면 함수가 실행(출력)된다.
+    <br><br>(2)매개변수(Parameter)와 인자(Argument)
+    <xmp><script>
+      function sum(left,right){
+        document.write(left+right+'<br>');
+      }
+      sum(2,3);
+      sum(3,4);
+    </script></xmp>
+    left와 right가 매개변수, sum안에 2,3,4가 인자이다.
+    <br><br>(3) 리턴(Return)
+    <xmp><script>
+      function sum2(left,right){
+        return left+right;
+      }
+      document.write(sum2(2,3)+'<br>');
+      document.write('<div style="color:red">'+sum2(2,3)+'</div>');
+      document.write('<div style="font-size:3rem;">'+sum2(2,3)+'</div>');
+    </script></xmp>
+    함수의 매개변수로 입력된 값을 리턴으로 출력하면서 함수를 다양하게 활용할 수 있게 되었다.
+  <h3>＃함수의 활용</h3>
+    버튼 코드를 함수에 담아 버튼을 여러개 만들 때 활용한다.
+    <br>함수 내용을 head 태그 안에 넣고 body에서 함수를 부른다.
+    <br>여기서 주의할 점은 , this로 리팩토링 해놨다면 실행이 안된다. this를 설정해놓은 매개변수 이름으로 똑같이 다 바꿔줘야 한다.
+  <h3>＃객체예고</h3>
+    객체가 필요한 이유 : 코드의 양이 방대할 때, 함수의 이름이 중복되지 않도록 (중복되면 앞에 함수 내용이 없는 셈 쳐진다) 한다.
+    <br>객체는 폴더로 비유할 수 있다.
+  <h3>＃객체</h3>
+    (1) 객체의 쓰기와 읽기
+    <br>이름이 있는 정리정돈 상자.(순서가 필요없는 배열. 배열,리스트는 순서가 있잖아)
+    <br>배열은 [대괄호], 객체는 {중괄호}
+    <br>중괄호 안에 그냥 넣지 않고, 이름을 붙여 넣는다
+    <br>(2) 객체와 반복문
+    <br>검색어 추천 : JavaScript object iterate
+    <br><a href="file:///C:/Users/%EC%9D%B4%ED%98%B8%EC%84%B1/Desktop/web/objectex.html" target="_blank">objectex.html파일 참조 (key에 대한 설명)</a>
+    <br>(3) 프로퍼티와 메소드
+    <br>메소드 : 객체에 소속된 함수
+    <br>프로퍼티 : 객체에 소속된 변수
+    <br>이해 완벽히 못했는데 맘편히 다음강의로 넘어가라해서 넘어감 <a href="https://opentutorials.org/course/3085/18853" target="_blank">강의 링크</a>
+  <h3>＃객체 활용</h3>
+    document는 객체였고, querySelector는 객체에 소속된 함수, 즉 메소드라는 것을 알게 되었다.
+    <br>Body, Links로 정리하는 시간이었다. 문법은 이번 시간이 마지막이었다.
+  <h3>＃파일로 쪼개서 정리 정돈하기</h3>
+    객체보다 더 큰 정리정돈의 도구! Js 파일을 따로 만들어 코드를 추가 했다.
+  <h3><a href="https://opentutorials.org/course/3085/18886" target="_blank">＃라이브러리와 프레임워크</a></h3>
+    둘 다 다른사람의 도움을 받아 소프트웨어를 만든다는 점에서 비슷
+    <br>-라이브러리 : 정리정돈 된 곳. 부품들을 재사용하기 쉽도록 정리해 두었음. ex) <a href="jquery.com" target="_blank">jQuery</a>
+    <br>jQuery의 CDN에서 링크를 무료로 받아 script 태그 src에 넣고 사용하면 됨.
+    <br>-프레임워크 : 만들고자 하는 것에 따라 세부적인 코드는 다르지만, 공통적으로 만들어야 하는 부분은 프레임워크에 있다.
+  <h3>UI vs API</h3>
+    User Interface : 유저가 특정 조작장치를 사용해 시스템에 관여하는 것
+    <br>Application Programming Interface : 프로그래밍 언어가 제공하는 기능을 사용하게 해주는 인터페이스
+    <br>UI 뿐만 아니라 API도 알게 되었다!
+    <br><strong>★WEB2 - JavaScript의 수업을 다 듣고 정리했습니다! 수고하셨습니다!!★</strong>
+    <br> 정말 내가 모든 웹페이지를 나름 완성시켰다. 신기하다. 중간에 쉬는 시간이 있었지만 쉽게 포기하고 잊는 나의 습성 치고 빠르게 잘 마쳤다. (2020. 06 ~ 2020. 08. 05)
+    <br> 코딩이 적성에 맞는 건지는 잘 모르겠다. 하지만 egoing 선생님 덕분에 코딩에 반감을 갖지 않고 잘 배운것 같다.
+    <br> 수업을 마치며 강의에서 하고싶은 것에 따른 여러가지 배울 것들을 소개해 주셨다. 앞으로 혼자 해내야 한다는 말에 무언가 느끼고 느낀점을 적는 중이다.
+    <br> 이제 복학하고 바빠질지도 모르겠지만 다시 코딩을 배운다면 다음은 모바일 어플을 배우고 싶다. 신서유기 게임 사이트는 언제 만들 수 있지? 아니면 이동진님이 추천한 node.js 강의를 듣겠지?
   </div>
 </div>
 </body>
